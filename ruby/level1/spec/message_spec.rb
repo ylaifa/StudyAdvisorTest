@@ -31,8 +31,18 @@ end
 
 describe "encode method" do 
   let(:message) {Message.new("HELLO", true)}
-  
+
   it "is encodable" do
     expect(message.encode).to eq("burh lorh grbl grbl rgob")
+  end
+end
+
+describe "decode method" do 
+  let(:first_message) {Message.new("burh lorh grbl grbl rgob", false)}
+  let(:second_message) {Message.new("ruob rgob ogru grbl olgr  rblg", false)}
+  
+  it "is decodable" do
+    expect(first_message.decode).to eq("HELLO")
+    expect(second_message.decode).to eq("WORLD !")
   end
 end
