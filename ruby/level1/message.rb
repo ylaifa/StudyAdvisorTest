@@ -54,4 +54,18 @@ class Message
       end
     end
   end
+
+  # Permet d'encoder un message de français à blourg
+  def encode
+    final_message = Array.new
+    message_split_array = self.content.split(/ /)
+    message_split_array.each do |word|
+      blorg_word = Array.new
+      word.each_char do |letter|
+        blorg_word.push(translate_one_letter(letter))
+      end
+        final_message.push(blorg_word.join(" "))
+    end
+    final_message.join("  ")
+  end
 end
