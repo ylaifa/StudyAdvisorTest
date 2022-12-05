@@ -28,3 +28,11 @@ describe "translate_one_letter method" do
     expect(french_message.translate_one_letter("D")).to eq("olgr")
   end
 end
+
+describe "encode method" do 
+  let(:message) {Message.new("HELLO", true)}
+  
+  it "is encodable" do
+    expect(message.encode).to eq("burh lorh grbl grbl rgob")
+  end
+end
