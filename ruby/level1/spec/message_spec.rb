@@ -30,10 +30,12 @@ describe "translate_one_letter method" do
 end
 
 describe "encode method" do 
-  let(:message) {Message.new("HELLO", true)}
+  let(:first_message) {Message.new("HELLO", true)}
+  let(:second_message) {Message.new("WORLD !", true)}
 
   it "is encodable" do
-    expect(message.encode).to eq("burh lorh grbl grbl rgob")
+    expect(first_message.encode).to eq("burh lorh grbl grbl rgob")
+    expect(second_message.encode).to eq("ruob rgob ogru grbl olgr  rblg")
   end
 end
 
