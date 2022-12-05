@@ -44,6 +44,7 @@ class Message
     self.is_french ? self.content.upcase : self.content.downcase
   end
 
+  # Permet d'encoder ou de décoder une lettre
   def translate_one_letter(letter)
     TRANSLATION_TABLE.each do |key, value|
       if key == letter
