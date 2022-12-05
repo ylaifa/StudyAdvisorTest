@@ -43,4 +43,14 @@ class Message
   def normalize
     self.is_french ? self.content.upcase : self.content.downcase
   end
+
+  def translate_one_letter(letter)
+    TRANSLATION_TABLE.each do |key, value|
+      if key == letter
+        return value
+      elsif value == letter
+        return key
+      end
+    end
+  end
 end
