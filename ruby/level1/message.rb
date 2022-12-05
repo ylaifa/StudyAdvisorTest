@@ -68,4 +68,19 @@ class Message
     end
     final_message.join("  ")
   end
+
+  # Permet de décoder un message de blourg à français
+  def decode
+    final_message = Array.new
+    word_array = self.content.split(/  /)
+    word_array.each do |word|
+      letter_array = word.split(/ /)
+      french_word = ""
+      letter_array.each do |letter|
+        french_word.concat(translate_one_letter(letter).to_s)
+      end
+      final_message.push(french_word)
+    end
+    return final_message.join(" ")
+  end
 end
