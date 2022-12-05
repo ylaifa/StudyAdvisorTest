@@ -38,4 +38,9 @@ class Message
     @content = content
     @is_french = is_french
   end
+
+  # Permet de normaliser l'entrée de la méthode en fonction de la langue.
+  def normalize
+    self.is_french ? self.content.upcase : self.content.downcase
+  end
 end
