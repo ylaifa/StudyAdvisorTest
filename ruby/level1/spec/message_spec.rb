@@ -48,3 +48,13 @@ describe "decode method" do
     expect(second_message.decode).to eq("WORLD !")
   end
 end
+
+describe "set_french_message method" do
+  let(:first_french_message) {Message.new("Hello World !", true)}
+  let(:second_french_message) {Message.new("Héllo :-)", true)}
+
+  it "is checkable" do
+    expect(first_french_message.set_french_message).to eq("HELLO WORLD !")
+    expect(second_french_message.set_french_message).to eq("Merci d'enter un message valide")
+  end
+end
