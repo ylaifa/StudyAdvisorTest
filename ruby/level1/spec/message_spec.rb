@@ -58,3 +58,13 @@ describe "set_french_message method" do
     expect(second_french_message.set_french_message).to eq("Merci d'enter un message valide")
   end
 end
+
+describe "set_blorg_message method" do
+  let(:first_blorg_message) {Message.new("BURH LORH GRBL GRBL RGOB", false)}
+  let(:second_blorg_message) {Message.new("Hello world burh lorh grbl grbl rgob", false)}
+
+  it "is checkable" do
+    expect(first_blorg_message.set_blorg_message).to eq("burh lorh grbl grbl rgob")
+    expect(second_blorg_message.set_blorg_message).to eq("Merci d'entrer un message valide")
+  end
+end
