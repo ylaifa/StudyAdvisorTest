@@ -79,10 +79,24 @@ class Message
     return final_message.join(" ")
   end
 
-  private
-
   # Permet de normaliser l'entrée de la méthode en fonction de la langue.
   def normalize
     self.is_french ? self.content.to_s.upcase : self.content.to_s.downcase
+  end
+
+  # Permet de normaliser et valider le message français à traduire.
+  def set_french_message
+    message = self.normalize
+    french_letter_array = message.split(%r{\s*})
+    french_alphabet = Array.new
+    TRANSLATION_TABLE.each do |key, value|
+      french_alphabet.push(key)
+    end
+    french_letter_array.each do |letter|
+      if french_alphabet.include?(letter) == false
+        return "Merci d'enter un message valide"  
+      end
+    end
+    return message
   end
 end
