@@ -94,7 +94,7 @@ class Message
     end
     french_letter_array.each do |letter|
       if french_alphabet.include?(letter) == false
-        return "Merci d'enter un message valide"  
+        return "Merci d'entrer un message valide"  
       end
     end
     return message

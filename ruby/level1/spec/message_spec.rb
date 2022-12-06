@@ -55,7 +55,7 @@ describe "set_french_message method" do
 
   it "is checkable" do
     expect(first_french_message.set_french_message).to eq("HELLO WORLD !")
-    expect(second_french_message.set_french_message).to eq("Merci d'enter un message valide")
+    expect(second_french_message.set_french_message).to eq("Merci d'entrer un message valide")
   end
 end
 
