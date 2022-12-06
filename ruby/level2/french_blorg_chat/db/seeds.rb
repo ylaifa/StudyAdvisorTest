@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+Message.destroy_all
+
+10.times do
+  m = Message.create!(
+    author: Faker::Movies::BackToTheFuture.character,
+    content: Faker::Movies::BackToTheFuture.quote,
+    is_french: true
+  )
+end
