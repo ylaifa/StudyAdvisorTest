@@ -50,21 +50,17 @@ describe "decode method" do
 end
 
 describe "set_french_message method" do
-  let(:first_french_message) {Message.new("Hello World !", true)}
-  let(:second_french_message) {Message.new("Héllo :-)", true)}
+  let(:french_message) {Message.new("Hello World !", true)}
 
   it "is checkable" do
-    expect(first_french_message.set_french_message).to eq("HELLO WORLD !")
-    expect(second_french_message.set_french_message).to eq("Merci d'entrer un message valide")
+    expect(french_message.set_french_message).to eq("HELLO WORLD !")
   end
 end
 
 describe "set_blorg_message method" do
-  let(:first_blorg_message) {Message.new("BURH LORH GRBL GRBL RGOB", false)}
-  let(:second_blorg_message) {Message.new("Hello world burh lorh grbl grbl rgob", false)}
+  let(:blorg_message) {Message.new("BURH LORH GRBL GRBL RGOB", false)}
 
   it "is checkable" do
-    expect(first_blorg_message.set_blorg_message).to eq("burh lorh grbl grbl rgob")
-    expect(second_blorg_message.set_blorg_message).to eq("Merci d'entrer un message valide")
+    expect(blorg_message.set_blorg_message).to eq("burh lorh grbl grbl rgob")
   end
 end
