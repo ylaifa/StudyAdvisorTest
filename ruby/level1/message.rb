@@ -99,4 +99,20 @@ class Message
     end
     return message
   end
+
+  # Permet de normaliser et valider le message blourg à traduire.
+  def set_blorg_message
+    message = self.normalize
+    blorg_letter_array = message.split
+    blorg_alphabet = Array.new
+    TRANSLATION_TABLE.each do |key, value|
+      blorg_alphabet.push(value)
+    end
+    blorg_letter_array.each do |letter|
+      if blorg_alphabet.include?(letter) == false
+        return "Merci d'entrer un message valide"
+      end
+    end
+    return message
+  end
 end
