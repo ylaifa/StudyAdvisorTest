@@ -52,8 +52,9 @@ class Message
 
   # Permet d'encoder un message de français à blourg
   def encode
+    message = self.set_french_message
     final_message = Array.new
-    message_split_array = self.content.split(/ /)
+    message_split_array = message.split(/ /)
     message_split_array.each do |word|
       blorg_word = Array.new
       word.each_char do |letter|
@@ -66,8 +67,9 @@ class Message
 
   # Permet de décoder un message de blourg à français
   def decode
+    message = self.set_blorg_message
     final_message = Array.new
-    word_array = self.content.split(/  /)
+    word_array = message.split(/  /)
     word_array.each do |word|
       letter_array = word.split(/ /)
       french_word = ""
@@ -94,7 +96,7 @@ class Message
     end
     french_letter_array.each do |letter|
       if french_alphabet.include?(letter) == false
-        return "Merci d'entrer un message valide"  
+        abort("Merci d'entrer un message valide")   
       end
     end
     return message
@@ -110,7 +112,7 @@ class Message
     end
     blorg_letter_array.each do |letter|
       if blorg_alphabet.include?(letter) == false
-        return "Merci d'entrer un message valide"
+        abort("Merci d'entrer un message valide")
       end
     end
     return message
