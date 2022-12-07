@@ -1,8 +1,15 @@
 <h1>Bienvenue sur la plateforme de communication Français/Blourg.</h1>
 
-<%= link_to "Créer un nouveau message", new_message_path %>
+<h2>Messages par tags:</h2>
+<ul>
+    <% @tags.each do |tag| %>
+        <li><%= link_to tag.name, tag_name_path(tag.name) %></li>
+    <% end %>
+</ul> 
 
-<h1>Messages :</h1>
+<h1><%= link_to "Créer un nouveau message", new_message_path %></h1>
+
+<h1>Listes de messages :</h1>
 <% @messages.each do |message| %>
     <h2><%= message.author %> (<%= link_to message.tag.name, tag_name_path(message.tag.name) %>)</h2>
     <p><%= message.encode %></p>
