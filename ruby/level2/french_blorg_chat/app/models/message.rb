@@ -88,7 +88,7 @@ class Message < ApplicationRecord
     return message
   end
 
-  # Permet de vérifier si le message est valide afin d'être traduit
+  # Permet de vérifier si le message est valide, afin d'être traduit.
   def is_valid_message?
     set_french_message || set_blorg_message ? true : false
   end
