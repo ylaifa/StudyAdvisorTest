@@ -9,10 +9,15 @@ require 'faker'
 
 Message.destroy_all
 
+["Urgent", "Secret", "Rigolo"].each do |tag_name|
+  Tag.create!(name: tag_name)
+end
+
 10.times do
   m = Message.create!(
     author: Faker::Movies::BackToTheFuture.character,
     content: Faker::Movies::BackToTheFuture.quote,
-    is_french: true
+    is_french: true,
+    tag_id: rand(Tag.first.id..Tag.last.id)
   )
 end
