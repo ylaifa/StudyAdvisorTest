@@ -14,10 +14,10 @@ Tag.destroy_all
   Tag.create!(name: tag_name)
 end
 
-10.times do
+1000.times do
   m = Message.create!(
     author: Faker::Movies::BackToTheFuture.character,
-    content: "C EST UN TEST",
+    content: ["C est un message test", "Il fait beau ici, j espere que chez toi aussi!", "tu rentres quand a la maison, je t ai prepare une tarte a la myrtille"].sample,
     is_french: true,
     tag_id: rand(Tag.first.id..Tag.last.id)
   )
