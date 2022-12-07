@@ -1,2 +1,6 @@
 <h1>Tags#show</h1>
-<p>Find me in app/views/tags/show.html.erb</p>
+<h1>Messages by tag:</h1>
+<% @tag.messages.each do |message| %>
+    <h2><%= message.author %></h2>
+    <p><%= message.content %></p>
+<% end %>
