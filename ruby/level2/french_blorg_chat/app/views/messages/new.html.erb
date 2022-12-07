@@ -1,4 +1,12 @@
 <h2>Nouveau message:</h2>
+<% if @message.errors.any? %>
+    <p>Nous n'avons pas réussi à créer le message pour la (ou les) raison(s) suivante(s) :</p>
+    <ul>
+        <% @message.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
 <%= form_for :message, url: messages_path, method: :post do |f| %>
     <div class="field">
         <h3><%= f.label :is_french, "Sélectionnez est votre langue:" %></h3>
