@@ -5,5 +5,5 @@
 <h1>Messages :</h1>
 <% @messages.each do |message| %>
     <h2><%= message.author %> (<%= link_to message.tag.name, tag_name_path(message.tag.name) %>)</h2>
-    <p><%= message.content %></p>
+    <p><%= message.encode %></p>
 <% end %>
