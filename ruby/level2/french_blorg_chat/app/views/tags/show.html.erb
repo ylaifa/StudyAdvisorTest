@@ -1,6 +1,7 @@
-<h1>Tags#show</h1>
 <h1>Messages by tag:</h1>
 <% @tag.messages.each do |message| %>
     <h2><%= message.author %></h2>
     <p><%= message.content %></p>
 <% end %>
+
+<%= link_to 'Retour', root_path %>

@@ -1,9 +1,9 @@
-<h1>Bienvenue sur la platforme de communication Français/Blourg.</h1>
+<h1>Bienvenue sur la plateforme de communication Français/Blourg.</h1>
 
 <%= link_to "Créer un nouveau message", new_message_path %>
 
 <h1>Messages :</h1>
 <% @messages.each do |message| %>
-    <h2><%= message.author %> (<%= message.tag.name %>)</h2>
+    <h2><%= message.author %> (<%= link_to message.tag.name, tag_name_path(message.tag.name) %>)</h2>
     <p><%= message.content %></p>
 <% end %>
