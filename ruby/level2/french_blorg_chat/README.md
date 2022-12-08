@@ -1,24 +1,21 @@
-# README
+# French Blorg Chat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## French Blorg Chat est une plateforme de traduction Français/Blourg :
 
-Things you may want to cover:
+* Ruby version : ruby 2.7.4
 
-* Ruby version
+## Pour lancer l'application veuillez entrer les commandes ci-dessous :
 
-* System dependencies
+- ```bundle install```
 
-* Configuration
+- ```rails db:create```
 
-* Database creation
+- ```rails db:migrate```
 
-* Database initialization
+- ```rails db:seed```
 
-* How to run the test suite
+## Pour naviger dans l'application, les routes suivantes sont accessibles :
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- /messages/
+- /messages/:id
+- /tags/:name/messages
