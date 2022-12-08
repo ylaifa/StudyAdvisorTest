@@ -19,3 +19,8 @@
 - /messages/
 - /messages/:id
 - /tags/:name/messages
+
+## Pour l'API REST les routes suivantes sont accessibles :
+
+- GET /api/messages
+- GET /api/messages/:id
