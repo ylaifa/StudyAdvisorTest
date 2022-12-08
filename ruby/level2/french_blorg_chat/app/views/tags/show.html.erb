@@ -1,6 +1,7 @@
 <h1>Liste des messages "<%= @tag.name %>":</h1>
 <h3><%= link_to 'Retour', root_path %></h3>
 <% @tag.messages.each do |message| %>
-    <h2><%= message.author %></h2>
-    <p><%= message.content %></p>
+    <hr>
+    <h2>Auteur: <%= message.author %></h2>
+    <p><b>Contenu:</b> <%= message.encode %></p>
 <% end %>

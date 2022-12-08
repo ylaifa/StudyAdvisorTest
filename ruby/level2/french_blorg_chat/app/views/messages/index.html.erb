@@ -11,6 +11,8 @@
 
 <h1>Listes de messages :</h1>
 <% @messages.each do |message| %>
-    <h2><%= message.author %> (<%= link_to message.tag.name, tag_name_path(message.tag.name) %>)</h2>
-    <p><%= message.encode %></p>
+    <hr>
+    <h2>Auteur : <%= message.author %> (<%= link_to message.tag.name, tag_name_path(message.tag.name) %>)</h2>
+    <p><b>Contenu :</b> <%= message.encode %></p>
+    <%= link_to "Voir le message", message_path(message) %>
 <% end %>
