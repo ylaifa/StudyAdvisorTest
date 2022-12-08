@@ -24,3 +24,4 @@
 
 - GET /api/messages
 - GET /api/messages/:id
+- GET /api/tags/:name/messages
